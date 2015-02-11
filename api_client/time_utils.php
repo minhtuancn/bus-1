@@ -1,13 +1,13 @@
 <?php
-// input: hh:mm or h:mm (in 24-hour format)
-// returns: #minutes since midnight
+// parameter hhmm: a string representing a time in 24-hour format (e.g., "12:24", "15:22")
+// returns: number of minutes elapsed since 00:00
 function to_minutes($hhmm) {
   $fields = explode(':', $hhmm);
   return $fields[0] * 60 + $fields[1];
 }
 
-// input: #minutes since midnight
-// returns: a string in 12-hour format
+// parameter minutes: number of minutes elapsed since 00:00
+// returns: a string representing a time in 12-hour format (e.g., "1:25pm", "11:20am")
 function to_hhmm($minutes) {
   $suffix = 'am';
   $h = intval($minutes / 60);
@@ -20,8 +20,9 @@ function to_hhmm($minutes) {
   return $h . ':' . $m . $suffix;
 }
 
-// returns: hh:mm (in 24-hour format)
+// returns: the current system time in 24-hour format (e.g., "21:26", "9:12")
 function get_current_time() {
   date_default_timezone_set('America/New_York');
   return date('H:i');
 }
+
