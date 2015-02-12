@@ -94,8 +94,6 @@ function complete_bus_info($matched_schedule, $bus_minutes_behind_schedule, &$en
   }
   $bus_leave_league = $bus_leave_union + 2;
   $bus_leave_museum = $bus_leave_library + 1;
-  $user_leave_for_league = $bus_leave_league - 5;
-  $user_leave_for_museum = $bus_leave_museum - 10;
   $entry['time_bus_leaves_league'] = $bus_leave_league;
   $entry['time_bus_leaves_museum'] = $bus_leave_museum;
 }
